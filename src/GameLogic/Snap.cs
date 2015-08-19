@@ -113,7 +113,7 @@ namespace CardGames.GameLogic
 		/// </summary>
 		public void Update()
 		{
-			if(_gameTimer.Ticks > _filipTime)
+			if(_gameTimer.Ticks > _flipTime)
 			{
 				_gameTimer.Reset();
 				FlipNextCard();
