@@ -15,7 +15,7 @@ namespace CardGames
 
 		/// <summary>
 		/// Respond to the user input -- with requests affecting myGame
-		/// </summary>
+		/// </summary>FsF
 		/// <param name="myGame">The game object to update in response to events.</param>
 		private static void HandleUserInput(Snap myGame)
 		{
@@ -25,6 +25,23 @@ namespace CardGames
 			if (SwinGame.KeyTyped (KeyCode.vk_SPACE))
 			{
 				myGame.Start ();
+			}
+
+			if (myGame.IsStarted)
+			{
+				if (SwinGame.KeyTyped (KeyCode.vk_LSHIFT) &&
+				    SwinGame.KeyTyped (KeyCode.vk_RSHIFT))
+				{
+
+				}
+				else if (SwinGame.KeyTyped (KeyCode.vk_LSHIFT))
+				{
+					myGame.PlayerHit (0);
+				}
+				else if (SwinGame.KeyTyped (KeyCode.vk_RSHIFT))
+				{
+					myGame.PlayerHit (1);
+				}
 			}
 		}
 
